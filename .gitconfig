@@ -1,0 +1,14 @@
+[user]
+	name = hongzhiijun
+	email = hong.zhijun@wuqi-tech.com
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	sh = stash
+	df = diff
+[core]
+	editor = vim
+	excludesfile = /home/hongzhijun/.gitignore
+	symlinks = true
