@@ -118,6 +118,9 @@ fi
 export EDITOR=/usr/bin/vi
 export EDITOR=/usr/bin/vim
 export PATH=$PATH:~/myshell
+export PATH=$PATH:"/opt/xtensa/XtDevTools/install/tools/RI-2020.4-linux/XtensaTools/bin"
+export PATH=$PATH:"/opt/xtensa-gcc/xtensa-wuqi-elf/bin"
+export PATH=$PATH:"/opt/riscv-toolchain/10.2.0/bin/"
 alias cdd="source cdd.sh"
 alias gst="git status"
 alias gco="git checkout"
@@ -133,5 +136,3 @@ alias gpl="git pull"
 alias gps="git push"
 alias gre="git reflog"
 alias grs="git reset"
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/PuTTY/:/mnt/c/MinGW/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/platform-tools:/mnt/c/Windows/System32/HWAudioDriverLibs:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/wq_sdk_env/riscv64-unknown-elf-gcc-10.2.0/bin:/mnt/c/Users/eehongzhijun/AppData/Local/Programs/Python/Python311:/mnt/c/Users/eehongzhijun/AppData/Local/Programs/Python/Python311/Scripts:/mnt/c/Users/eehongzhijun/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/eehongzhijun/AppData/Local/Microsoft/WindowsApps:/snap/bin:/home/hongzhijun/myshell:/opt/riscv
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/PuTTY/:/mnt/c/MinGW/bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/platform-tools:/mnt/c/Windows/System32/HWAudioDriverLibs:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/dotnet/:/mnt/c/wq_sdk_env/riscv64-unknown-elf-gcc-10.2.0/bin:/mnt/c/Users/eehongzhijun/AppData/Local/Programs/Python/Python311:/mnt/c/Users/eehongzhijun/AppData/Local/Programs/Python/Python311/Scripts:/mnt/c/Users/eehongzhijun/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/eehongzhijun/AppData/Local/Microsoft/WindowsApps:/snap/bin:/home/hongzhijun/myshell:/home/hongzhijun/myshell:/opt/riscv
