@@ -121,6 +121,7 @@ export PATH=$PATH:~/myshell
 export PATH=$PATH:"/opt/xtensa/XtDevTools/install/tools/RI-2020.4-linux/XtensaTools/bin"
 export PATH=$PATH:"/opt/xtensa-gcc/xtensa-wuqi-elf/bin"
 export PATH=$PATH:"/opt/riscv-toolchain/10.2.0/bin/"
+alias mk="make"
 alias py3="python3"
 alias py="python"
 alias cdd="source cdd.sh"
