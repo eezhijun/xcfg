@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 export EDITOR=/usr/bin/vi
 export EDITOR=/usr/bin/vim
-export PATH=$PATH:~/myshell
+export PATH=$PATH:~/xshell
 export PATH=$PATH:"/opt/xtensa/XtDevTools/install/tools/RI-2020.4-linux/XtensaTools/bin"
 export PATH=$PATH:"/opt/xtensa-gcc/xtensa-wuqi-elf/bin"
 export PATH=$PATH:"/opt/riscv-toolchain/10.2.0/bin/"
