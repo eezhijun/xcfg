@@ -118,9 +118,6 @@ fi
 export EDITOR=/usr/bin/vi
 export EDITOR=/usr/bin/vim
 export PATH=$PATH:~/xshell
-export PATH=$PATH:"/opt/xtensa/XtDevTools/install/tools/RI-2020.4-linux/XtensaTools/bin"
-export PATH=$PATH:"/opt/xtensa-gcc/xtensa-wuqi-elf/bin"
-export PATH=$PATH:"/opt/riscv-toolchain/10.2.0/bin/"
 alias mk="make"
 alias py3="python3"
 alias py="python"
@@ -139,4 +136,10 @@ alias gpl="git pull"
 alias gps="git push"
 alias gre="git reflog"
 alias grs="git reset"
+alias gt="git tag"
 alias gdfs="git diff --staged"
+
+host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
+export all_proxy="http://$host_ip:7891"
+export http_proxy="http://$host_ip:7891"
+export https_proxy="http://$host_ip:7891"
