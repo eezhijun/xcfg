@@ -140,7 +140,7 @@ alias gt="git tag"
 alias gdfs="git diff --staged"
 
 host_ip=`cat /etc/resolv.conf|grep nameserver|awk '{print $2}'`
-sed -i "/.*ProxyCommand*/c\  ProxyCommand nc -v -x $host_ip:7891 %h %p" ~/.ssh/config
+sed -i "/.*ProxyCommand*/c\	ProxyCommand nc -v -x $host_ip:7891 %h %p" ~/.ssh/config
 export ALL_PROXY=http://$host_ip:7891
 export {http,https,ftp}_proxy=$ALL_PROXY
 export {HTTP,HTTPS,FTP}_PROXY=$ALL_PROXY
