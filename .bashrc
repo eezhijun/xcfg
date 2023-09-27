@@ -117,8 +117,10 @@ if ! shopt -oq posix; then
 fi
 export EDITOR=/usr/bin/vi
 export EDITOR=/usr/bin/vim
-export PATH=$PATH:~/xshell
-alias mk="make"
+export PATH=$PATH:~/xsh
+export PATH=$PATH:"/opt/xtensa/XtDevTools/install/tools/RI-2020.4-linux/XtensaTools/bin"
+export PATH=$PATH:"/opt/xtensa-gcc/xtensa-wuqi-elf/bin"
+export PATH=$PATH:"/opt/riscv-toolchain/10.2.0/bin/"
 alias py3="python3"
 alias py="python"
 alias cdd="source cdd.sh"
@@ -136,11 +138,30 @@ alias gpl="git pull"
 alias gps="git push"
 alias gre="git reflog"
 alias grs="git reset"
-alias gt="git tag"
 alias gdfs="git diff --staged"
 
-host_ip=`cat /etc/resolv.conf|grep nameserver|awk '{print $2}'`
-sed -i "/.*ProxyCommand*/c\	ProxyCommand nc -v -x $host_ip:7891 %h %p" ~/.ssh/config
-export ALL_PROXY=http://$host_ip:7891
-export {http,https,ftp}_proxy=$ALL_PROXY
-export {HTTP,HTTPS,FTP}_PROXY=$ALL_PROXY
+export u_host=`cat /etc/resolv.conf|grep nameserver|awk '{print $2}'`
+sed -i "/.*ProxyCommand*/c\	ProxyCommand nc -v -x $u_host:7891 %h %p" ~/.ssh/config
+
+proxy () {
+  export ALL_PROXY="http://$u_host:7891"
+  export all_proxy="http://$u_host:7891"
+  export {http,https,ftp}_proxy=$ALL_PROXY
+  export {HTTP,HTTPS,FTP}_PROXY=$ALL_PROXY
+  echo -e "Acquire::http::Proxy \"http://$u_host:7891\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
+  echo -e "Acquire::https::Proxy \"http://$u_host:7891\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
+  curl ip.gs
+}
+proxy # default call proxy
+
+noproxy () {
+  unset ALL_PROXY
+  unset all_proxy
+  sudo sed -i -e '/Acquire::http::Proxy/d' /etc/apt/apt.conf
+  sudo sed -i -e '/Acquire::https::Proxy/d' /etc/apt/apt.conf
+  curl ip.gs
+}
+# export ALL_PROXY="http://$u_host:7891"
+# export all_proxy="http://$u_host:7891"
+# export {http,https,ftp}_proxy=$ALL_PROXY
+# export {HTTP,HTTPS,FTP}_PROXY=$ALL_PROXY
