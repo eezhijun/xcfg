@@ -115,6 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# user edit area
 export EDITOR=/usr/bin/vi
 export EDITOR=/usr/bin/vim
 export PATH=$PATH:~/xsh
