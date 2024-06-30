@@ -142,27 +142,28 @@ alias gre="git reflog"
 alias grs="git reset"
 alias gdfs="git diff --staged"
 
-export u_host=`cat /etc/resolv.conf|grep nameserver|awk '{print $2}'`
-sed -i "/.*ProxyCommand*/c\	ProxyCommand nc -v -x $u_host:7891 %h %p" ~/.ssh/config
+# WSL proxy settings
+# export u_host=`cat /etc/resolv.conf|grep nameserver|awk '{print $2}'`
+# sed -i "/.*ProxyCommand*/c\	ProxyCommand nc -v -x $u_host:7891 %h %p" ~/.ssh/config
 
-proxy () {
-  export ALL_PROXY="http://$u_host:7891"
-  export all_proxy="http://$u_host:7891"
-  export {http,https,ftp}_proxy=$ALL_PROXY
-  export {HTTP,HTTPS,FTP}_PROXY=$ALL_PROXY
-  echo -e "Acquire::http::Proxy \"http://$u_host:7891\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
-  echo -e "Acquire::https::Proxy \"http://$u_host:7891\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
-  curl ip.gs
-}
-proxy # default call proxy
+# proxy () {
+#   export ALL_PROXY="http://$u_host:7891"
+#   export all_proxy="http://$u_host:7891"
+#   export {http,https,ftp}_proxy=$ALL_PROXY
+#   export {HTTP,HTTPS,FTP}_PROXY=$ALL_PROXY
+#   echo -e "Acquire::http::Proxy \"http://$u_host:7891\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
+#   echo -e "Acquire::https::Proxy \"http://$u_host:7891\";" | sudo tee -a /etc/apt/apt.conf > /dev/null
+#   curl ip.gs
+# }
+# proxy # default call proxy
 
-noproxy () {
-  unset ALL_PROXY
-  unset all_proxy
-  sudo sed -i -e '/Acquire::http::Proxy/d' /etc/apt/apt.conf
-  sudo sed -i -e '/Acquire::https::Proxy/d' /etc/apt/apt.conf
-  curl ip.gs
-}
+# noproxy () {
+#   unset ALL_PROXY
+#   unset all_proxy
+#   sudo sed -i -e '/Acquire::http::Proxy/d' /etc/apt/apt.conf
+#   sudo sed -i -e '/Acquire::https::Proxy/d' /etc/apt/apt.conf
+#   curl ip.gs
+# }
 # export ALL_PROXY="http://$u_host:7891"
 # export all_proxy="http://$u_host:7891"
 # export {http,https,ftp}_proxy=$ALL_PROXY
